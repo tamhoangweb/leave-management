@@ -83,7 +83,7 @@ const Button = ({ label, variant, size, disabled, onClick, ...restProps }) => {
 
 Button.propTypes = {
     label: PropTypes.string.isRequired,
-    variant: PropTypes.oneOf(['primary', 'secondary', 'danger']),
+    variant: PropTypes.oneOf(['primary', 'secondary', 'danger']).isRequired,
     size: PropTypes.oneOf(['large', 'medium']),
 };
 Button.defaultProps = {
