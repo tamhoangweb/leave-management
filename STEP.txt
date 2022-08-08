@@ -1,0 +1,5 @@
+typeface-source-sans-pro
+styled-normalize
+GlobalStyle.js
+
+npx @svgr/cli --replace-attr-values "#4F4F4F={props.color}" src/modules/common/components/Icons/icon --out-dir src/modules/common/components/Icons
