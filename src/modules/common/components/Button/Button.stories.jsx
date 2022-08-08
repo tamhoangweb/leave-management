@@ -2,7 +2,6 @@ import React from 'react';
 
 import Button from './Button';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
     title: 'Example/Button',
     component: Button,
@@ -12,6 +11,6 @@ export default {
 const Template = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
-// Default.args = {
-//     label: 'Default label',
-// };
+Default.args = {
+    label: 'Button label',
+};
