@@ -1,8 +1,8 @@
 import GlobalStyle from '../GlobalStyle';
-import { Header } from '../Header';
+import Header from '../Header';
 import Page from './Page';
 import { Home, HomeFilled, Books, BooksFilled, Clipboard, ClipboardFilled, Cog, CogFilled } from '../Icons';
-import { Sidebar } from '../Sidebar';
+import Sidebar from '../Sidebar';
 const menus = [
     {
         path: '#',
