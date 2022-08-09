@@ -1,19 +1,20 @@
 import GlobalStyle from '../GlobalStyle';
 import Box from '../Box';
 import Grid from '../Grid';
-// import { colors } from '../../utils/styles';
+import { colors } from '../../utils/styles';
 import * as Icons from '.';
-import { colors } from 'modules/common/utils/styles';
 
 export default {
     title: 'Example/Icons',
     component: Icons,
 };
+console.log(Icons);
 
 const Template = () => (
     <>
         <GlobalStyle />
         <Grid>
+            {/* convert Module Object to Array, and Loop */}
             {Object.entries(Icons).map(([iconName, Icon]) => (
                 <Grid.Item
                     span={3}
