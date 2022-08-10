@@ -6,6 +6,7 @@ import Sidebar from './modules/common/components/Sidebar';
 import Page from './modules/common/components/Page';
 
 import { mainRoutes } from './routes';
+import Slider from 'modules/common/components/Slider';
 
 console.log(mainRoutes);
 function App() {
@@ -13,7 +14,13 @@ function App() {
         <>
             <BrowserRouter>
                 <GlobalStyle />
-                <Header fixed={true} />
+                <Slider>
+                    <div style={{ textAlign: 'center', height: 100, backgroundColor: 'aliceblue' }}>Slide 1</div>
+                    <div style={{ textAlign: 'center', height: 100, backgroundColor: 'aliceblue' }}>Slide 2</div>
+                    <div style={{ textAlign: 'center', height: 100, backgroundColor: 'aliceblue' }}>Slide 3</div>
+                    <div style={{ textAlign: 'center', height: 100, backgroundColor: 'aliceblue' }}>Slide 4</div>
+                </Slider>
+                {/* <Header fixed={true} /> */}
                 <Page>
                     <Sidebar fixed={true}>
                         {mainRoutes.map(({ path, activeIcon, icon, title }, index) => {
