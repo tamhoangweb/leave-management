@@ -6,7 +6,6 @@ import Sidebar from './modules/common/components/Sidebar';
 import Page from './modules/common/components/Page';
 
 import { mainRoutes } from './routes';
-import Slider from 'modules/common/components/Slider';
 
 console.log(mainRoutes);
 function App() {

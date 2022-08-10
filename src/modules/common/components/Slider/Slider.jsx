@@ -99,8 +99,6 @@ const Slider = ({ children }) => (
                 type: 'bullets',
                 el: '.paginationWrapper',
             }}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
         >
             {React.Children.map(children, (child) => (
                 <SwiperSlide>{child}</SwiperSlide>

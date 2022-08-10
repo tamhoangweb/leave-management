@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 import Box from 'modules/common/components/Box';
 import { colors, typography } from 'modules/common/utils/styles';
-import mocks from './data/mocks';
 import Slider from 'modules/common/components/Slider';
 import LeaveRequest from './LeaveRequest';
 import useGetUrgentLeaveRequests from './data/useGetUrgentLeaveRequests';
+import Loader from './Loader';
 
 const WidgetHeader = styled.span`
     display: block;
@@ -19,7 +19,7 @@ const UrgentLeavesWidget = () => {
     const { loading, data: urgentLeaveRequests } = useGetUrgentLeaveRequests();
 
     if (loading) {
-        return <Box>Loading....</Box>;
+        return <Loader />;
     }
     return (
         <Box>
