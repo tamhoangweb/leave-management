@@ -1,67 +1,43 @@
+import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+
 import GlobalStyle from './modules/common/components/GlobalStyle';
 import Header from './modules/common/components/Header';
 import Sidebar from './modules/common/components/Sidebar';
 import Page from './modules/common/components/Page';
 
-import {
-    Home,
-    HomeFilled,
-    Books,
-    BooksFilled,
-    Clipboard,
-    ClipboardFilled,
-    Cog,
-    CogFilled,
-} from './modules/common/components/Icons';
-const menus = [
-    {
-        path: '#',
-        activeIcon: HomeFilled,
-        icon: Home,
-        title: 'Home',
-    },
-    {
-        path: '#',
-        activeIcon: ClipboardFilled,
-        icon: Clipboard,
-        title: 'Leave Management',
-    },
-    {
-        path: '#',
-        activeIcon: BooksFilled,
-        icon: Books,
-        title: 'Document',
-    },
-    {
-        path: '#',
-        activeIcon: CogFilled,
-        icon: Cog,
-        title: 'Settings',
-    },
-];
+import { mainRoutes } from './routes';
+
+console.log(mainRoutes);
 function App() {
     return (
         <>
-            <GlobalStyle />
-            <Header fixed={true} />
-            <Page>
-                <Sidebar fixed={true}>
-                    {menus.map(({ path, activeIcon, icon, title }, index) => {
-                        return (
-                            <Sidebar.Item
-                                href={path}
-                                ActiveIcon={activeIcon}
-                                Icon={icon}
-                                active={index === 1}
-                                key={index}
-                                title={title}
-                            />
-                        );
-                    })}
-                </Sidebar>
+            <BrowserRouter>
+                <GlobalStyle />
+                <Header fixed={true} />
+                <Page>
+                    <Sidebar fixed={true}>
+                        {mainRoutes.map(({ path, activeIcon, icon, title }, index) => {
+                            return (
+                                <Sidebar.RouterItem
+                                    as={NavLink}
+                                    to={path}
+                                    ActiveIcon={activeIcon}
+                                    Icon={icon}
+                                    key={index}
+                                    title={title}
+                                />
+                            );
+                        })}
+                    </Sidebar>
+                    <Routes>
+                        {mainRoutes.map(({ path, ContentComponent }, index) => (
+                            <Route key={index} path={path} element={<ContentComponent />} />
+                        ))}
 
-                <Page.Content>Page Content</Page.Content>
-            </Page>
+                        <Route path="*" element={<Page.Content>404 Not Found</Page.Content>} />
+                    </Routes>
+                </Page>
+            </BrowserRouter>
         </>
     );
 }

@@ -62,7 +62,7 @@ const Header = ({ fixed, ...restProps }) => {
 };
 
 Header.propTypes = {
-    fixed: PropTypes.bool.isRequired,
+    fixed: PropTypes.bool,
 };
 Header.defaulProps = {
     fixed: true,

@@ -15,6 +15,17 @@ const StyledItem = styled.a`
     :hover {
         cursor: pointer;
         background-color: ${colors.black};
+
+        :after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: ${colors.primary};
+        }
     }
 
     svg {

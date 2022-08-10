@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { colors } from '../../utils/styles';
 import Item from './Item';
+import RouterItem from './RouterItem';
 
 const StyledSidebar = styled.nav`
     min-height: calc(100vh - 3.5rem);
@@ -24,4 +25,5 @@ const StyledSidebar = styled.nav`
 `;
 const Sidebar = (props) => <StyledSidebar {...props} />;
 Sidebar.Item = Item;
+Sidebar.RouterItem = RouterItem;
 export default Sidebar;
