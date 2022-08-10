@@ -3,7 +3,7 @@ import Item from './Item';
 
 const RouterItem = ({ to, ...props }) => {
     const match = useMatch(to);
-    return <Item as={NavLink} to={to} active={match} {...props}></Item>;
+    return <Item as={NavLink} to={to} active={!!match} {...props}></Item>;
 };
 
 export default RouterItem;

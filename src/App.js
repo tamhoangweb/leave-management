@@ -14,13 +14,7 @@ function App() {
         <>
             <BrowserRouter>
                 <GlobalStyle />
-                <Slider>
-                    <div style={{ textAlign: 'center', height: 100, backgroundColor: 'aliceblue' }}>Slide 1</div>
-                    <div style={{ textAlign: 'center', height: 100, backgroundColor: 'aliceblue' }}>Slide 2</div>
-                    <div style={{ textAlign: 'center', height: 100, backgroundColor: 'aliceblue' }}>Slide 3</div>
-                    <div style={{ textAlign: 'center', height: 100, backgroundColor: 'aliceblue' }}>Slide 4</div>
-                </Slider>
-                {/* <Header fixed={true} /> */}
+                <Header fixed={true} />
                 <Page>
                     <Sidebar fixed={true}>
                         {mainRoutes.map(({ path, activeIcon, icon, title }, index) => {

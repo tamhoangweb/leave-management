@@ -42,6 +42,10 @@ const StyledNavigationButton = styled.button`
             background-color: transparent;
         }
     }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 const PaginationWrapper = styled.div`
@@ -60,40 +64,61 @@ const PaginationWrapper = styled.div`
             background-color: ${colors.primary};
         }
     }
+
+    @media (max-width: 768px) {
+        text-align: left;
+    }
 `;
+
+const StyledSlider = styled.div`
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+
+    .swiper-slide {
+        padding: 0 2.5rem;
+
+        @media only screen and (max-width: 768px) {
+            padding: 0;
+        }
+    }
+`;
+
 const Slider = ({ children }) => (
-    <Swiper
-        modules={[Navigation, Pagination, A11y]}
-        spaceBetween={50}
-        slidesPerView={1}
-        navigation={{
-            prevEl: '.prevBtn',
-            nextEl: '.nextBtn',
-        }}
-        pagination={{
-            clickable: true,
-            type: 'bullets',
-            el: '.paginationWrapper',
-        }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
-    >
-        {React.Children.map(children, (child) => (
-            <SwiperSlide>{child}</SwiperSlide>
-        ))}
+    <StyledSlider>
+        <Swiper
+            modules={[Navigation, Pagination, A11y]}
+            spaceBetween={48}
+            slidesPerView={1}
+            navigation={{
+                prevEl: '.prevBtn',
+                nextEl: '.nextBtn',
+            }}
+            pagination={{
+                clickable: true,
+                type: 'bullets',
+                el: '.paginationWrapper',
+            }}
+            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => console.log('slide change')}
+        >
+            {React.Children.map(children, (child) => (
+                <SwiperSlide>{child}</SwiperSlide>
+            ))}
 
-        <div slot="container-end">
-            <StyledNavigationButton className="prevBtn">
-                <ChevronLeft color={colors.gray2} />
-            </StyledNavigationButton>
+            <div slot="container-end">
+                <StyledNavigationButton className="prevBtn">
+                    <ChevronLeft color={colors.gray2} />
+                </StyledNavigationButton>
 
-            <StyledNavigationButton className="nextBtn">
-                <ChevronRight color={colors.gray2} />
-            </StyledNavigationButton>
+                <StyledNavigationButton className="nextBtn">
+                    <ChevronRight color={colors.gray2} />
+                </StyledNavigationButton>
 
-            <PaginationWrapper className="paginationWrapper" />
-        </div>
-    </Swiper>
+                <PaginationWrapper className="paginationWrapper" />
+            </div>
+        </Swiper>
+    </StyledSlider>
 );
 
 export default Slider;
