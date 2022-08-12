@@ -8,7 +8,6 @@ export default {
     title: 'Example/Icons',
     component: Icons,
 };
-console.log(Icons);
 
 const Template = () => (
     <>
